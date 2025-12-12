@@ -1,5 +1,7 @@
 // import './App.css'
 
+import StateEffectPanel from "./components/StateEffectPanel";
+
 function App() {
 
   return (
@@ -11,6 +13,7 @@ function App() {
         <section>
           <h2>1. State and Effect Panel</h2>
           {/* We'll drop some component here. */}
+          <StateEffectPanel />
         </section>
       </div>
     </>
