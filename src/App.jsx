@@ -27,12 +27,12 @@ function App() {
         </StyledSection>
 
         <StyledSection>
-          <h2>2. Reducer vs State Panel</h2>
+          <h2>2.1 Reducer vs State Panel</h2>
           <p>State version</p>
           <ReducerPanelState />
         </StyledSection>
         <StyledSection>
-          <h2>2. Reducer vs State Panel</h2>
+          <h2>2.2 Reducer vs State Panel</h2>
           <p>Reducer version</p>
           <ReducerPanel />
         </StyledSection>
