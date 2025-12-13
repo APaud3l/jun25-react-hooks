@@ -3,6 +3,7 @@
 import LocalStoragePanel from "./components/LocalStoragePanel";
 import ReducerPanel from "./components/ReducerPanel";
 import ReducerPanelState from "./components/ReducerPanelState";
+import RouterHooksPanel from "./components/RouterHooksPanel";
 import StateEffectPanel from "./components/StateEffectPanel";
 import styled from "styled-components";
 
@@ -38,6 +39,10 @@ function App() {
         <StyledSection>
           <h2>3. Local Storage Hook Panel</h2>
           <LocalStoragePanel />
+        </StyledSection>
+        <StyledSection>
+          <h3>4. Router Hooks Panel</h3>
+          <RouterHooksPanel />
         </StyledSection>
       </div>
     </>
