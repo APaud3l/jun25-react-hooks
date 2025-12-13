@@ -9,6 +9,9 @@ export default function StateEffectPanel() {
   const inputRef = useRef(null);
   const renderCountRef = useRef(0);
 
+  // eslint-disable-next-line react-hooks/refs
+  //   Accessing useRef current properties within the component is not recommended,
+  // better way: Define event handlers outside the Component and have it called from within
   renderCountRef.current += 1;
 
   //   Syntax for useEffect hook: useEffect(arrow function, dependency array);
@@ -57,7 +60,8 @@ export default function StateEffectPanel() {
           />
         </label>
       </div>
-      <p>Component has rendered { renderCountRef.current } times</p>
+      {/* eslint-disable-next-line react-hooks/refs */}
+      <p>Component has rendered {renderCountRef.current} times</p>
     </div>
   );
 }

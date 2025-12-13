@@ -1,16 +1,17 @@
 // import './App.css'
 
+import ReducerPanel from "./components/ReducerPanel";
+import ReducerPanelState from "./components/ReducerPanelState";
 import StateEffectPanel from "./components/StateEffectPanel";
 import styled from "styled-components";
 
 const StyledSection = styled.section`
-  marginTop: 2rem;
+  margintop: 2rem;
   border: 1px solid #04c1889d;
   padding: 1rem;
 `;
 
 function App() {
-
   return (
     <>
       <div style={{ padding: "2rem" }}>
@@ -22,9 +23,20 @@ function App() {
           {/* We'll drop some component here. */}
           <StateEffectPanel />
         </StyledSection>
+
+        <StyledSection>
+          <h2>2. Reducer vs State Panel</h2>
+          <p>State version</p>
+          <ReducerPanelState />
+        </StyledSection>
+        <StyledSection>
+          <h2>2. Reducer vs State Panel</h2>
+          <p>Reducer version</p>
+          <ReducerPanel />
+        </StyledSection>
       </div>
     </>
-  )
+  );
 }
 
 export default App;
