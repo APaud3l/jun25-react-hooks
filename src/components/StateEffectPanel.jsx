@@ -1,14 +1,20 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function StateEffectPanel() {
-  // Syntax: const [varname, setterFunction] = useState(initialValue);
+  // Syntax for useState hook: const [varname, setterFunction] = useState(initialValue);
   const [count, setCount] = useState(0);
   const [name, setName] = useState("");
+
+  //   Syntax for useRef hook: const variableName = useRef(initialValue)
+  const inputRef = useRef(null);
+  const renderCountRef = useRef(0);
+
+  renderCountRef.current += 1;
 
   //   Syntax for useEffect hook: useEffect(arrow function, dependency array);
   // Example of Lifecycle method: componentDidUpdate
   useEffect(() => {
-    document.title = `Count: ${count}, Name: ${name || 'Dev'}`;
+    document.title = `Count: ${count}, Name: ${name || "Dev"}`;
   }, [count, name]);
 
   // Lifecycle method: componentDidMount
@@ -27,21 +33,31 @@ export default function StateEffectPanel() {
     setCount((prev) => ++prev);
   };
 
+  const handleFocusInput = () => {
+    if (inputRef.current) {
+      console.log(inputRef.current);
+      inputRef.current.focus();
+    }
+  };
+
   return (
     <div>
       <p>Count: {count}</p>
       <button onClick={handleIncrement}>Increment</button>
+      <button onClick={handleFocusInput}>Focus on input</button>
 
       <div style={{ marginTop: "1rem" }}>
         <label>
           Name:{" "}
           <input
+            ref={inputRef}
             value={name}
             onChange={(event) => setName(event.target.value)}
             placeholder="Type your name here..."
           />
         </label>
       </div>
+      <p>Component has rendered { renderCountRef.current } times</p>
     </div>
   );
 }
